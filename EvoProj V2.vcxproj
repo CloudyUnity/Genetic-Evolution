@@ -71,7 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExternalIncludePath>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2_ttf-2.0.15\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\lib\x64;C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2_ttf-2.0.15\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -109,12 +113,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -125,30 +129,75 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\finnw\OneDrive\Documents\VC Libraries\SDL2-2.28.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BrainViewer.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Creature.cpp" />
+    <ClCompile Include="CreatureBrain.cpp" />
+    <ClCompile Include="CreatureGenome.cpp" />
+    <ClCompile Include="CreatureManager.cpp" />
+    <ClCompile Include="CreatureNeuron.cpp" />
     <ClCompile Include="EvoProj V2.cpp" />
+    <ClCompile Include="HUDManager.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="NeuronAge.cpp" />
+    <ClCompile Include="NeuronEye.cpp" />
+    <ClCompile Include="NeuronMove.cpp" />
+    <ClCompile Include="NeuronON.cpp" />
+    <ClCompile Include="NeuronOscillator.cpp" />
+    <ClCompile Include="NeuronRand.cpp" />
+    <ClCompile Include="NeuronRotate.cpp" />
     <ClCompile Include="PaintManager.cpp" />
+    <ClCompile Include="PerformanceAnalyser.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="SimulationManager.cpp" />
+    <ClCompile Include="SimulationSetup.cpp" />
+    <ClCompile Include="SpawnPoint.cpp" />
     <ClCompile Include="UpdateManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BrainViewer.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Creature.h" />
+    <ClInclude Include="CreatureBrain.h" />
+    <ClInclude Include="CreatureGenome.h" />
+    <ClInclude Include="CreatureManager.h" />
+    <ClInclude Include="CreatureNeuron.h" />
+    <ClInclude Include="HUDManager.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="NeuronAge.h" />
+    <ClInclude Include="NeuronEye.h" />
+    <ClInclude Include="NeuronMove.h" />
+    <ClInclude Include="NeuronON.h" />
+    <ClInclude Include="NeuronOscillator.h" />
+    <ClInclude Include="NeuronRand.h" />
+    <ClInclude Include="NeuronRotate.h" />
     <ClInclude Include="PaintManager.h" />
+    <ClInclude Include="PerformanceAnalyser.h" />
     <ClInclude Include="Shape.h" />
+    <ClInclude Include="SimulationManager.h" />
+    <ClInclude Include="SimulationSetup.h" />
+    <ClInclude Include="SpawnPoint.h" />
     <ClInclude Include="UpdateManager.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="WallManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

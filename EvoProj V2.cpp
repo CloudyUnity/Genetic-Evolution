@@ -5,19 +5,52 @@
 #include "UpdateManager.h"
 #include "PaintManager.h"
 #include <iostream>
+#include "CreatureGenome.h"
+#include "Creature.h"
+#include "CreatureManager.h"
+#include "SimulationSetup.h"
+#include "InputManager.h"
+#include "HUDManager.h"
+#include "SimulationManager.h"
+#include "SpawnPoint.h"
 
 int main(int argc, char* argv[])
 {   
+    unsigned int seed = (int)time(0);
+    srand(seed);
+
     Logger::Init();
+    Logger::Log("Logger Init Done");
+
     PaintManager::Init();
+    Logger::Log("Paint Init Done");
 
-    Logger::Log("Initialisation complete");
+    InputManager::Init();
+    Logger::Log("Input Init Done");
 
-    Shape shape = Shape(10, 50, 100, 50);
-    shape.Col = Color(0, 0, 255, 255);
-    shape.Text = "Main Shape";
+    HUDManager::Init();
+    Logger::Log("HUD Init Done");
+
+    Shape::ShapeInfo info;
+    info.Wall = true;
+    info.Position = Vector2(1200, 1200);
+    info.Scale = Vector2(1000, 1000);
+    info.Col = Color::COZY_BLACK;
+    info.Layer = 1300;
+    new Shape(info);
+
+    SpawnPoint::Set(Vector2(300, 300));
+    SimulationManager::InitSim(1, 5, 200, 2, 3);
+
+    Logger::Log("Initialisation complete, starting update loop");    
 
     UpdateManager::BeginUpdateLoop();
+
+    Logger::Log("Beginning deallocation");
+    PaintManager::CleanUp();
+
+    Logger::Log("Program ended successfully, closing Logger");
+    Logger::CloseStream();
 
     return 0;
 }
