@@ -2,25 +2,63 @@
 #include "Vector2.h"
 #include "Color.h"
 
-
 #ifndef SHAPE_H
 #define SHAPE_H
 
 class Shape {
 public:
-    Shape();
-    Shape(int posX, int posY, int scalX, int scalY);
+    struct ShapeInfo {
+        int Layer = 0;        
 
-    int Layer = 0;
-    Vector2 Position;
-    Vector2 Scale;
+        // Rendering
+        Vector2 Position;
+        Vector2 Scale;
+        Vector2 HalfScale;
+        double RotationAngle = 0;
+        int BorderSize = 0;
+        bool ConnectedToEastWindowEdge = false;
+        bool ConnectedToSouthWindowEdge = false;
+        bool ZoomDisabled = false;
+        bool QuickDrawDisabled = false;
 
-    int BorderSize = 0;
-    Color Col = Color();
-    bool Filled = true;
-    bool Visible = true;
+        // Coloring
+        Color Col;
+        Color BorderColor;
 
-    std::string Text = "";
+        // Text
+        bool RenderText = false;
+        std::string Text = "Default Shape";
+        Color TextColor;
+        SDL_Texture* CachedTex = nullptr;
+        SDL_Surface* CachedSurface = nullptr;
+
+        // Properties        
+        bool Filled = true;
+        bool Visible = true;
+        bool Wall = false;
+
+        // Interactivity
+        bool Hoverable = false;
+        bool Clickable = false;
+
+        // Line
+        bool IsLine = false;
+        Vector2 LineEndPosition;
+
+        // Unused
+        bool IsCircle = false;
+    };
+
+    Shape(ShapeInfo info);
+
+    Vector2 GetPointDirection();
+    bool Contains(Vector2 point);
+    void SetText(std::string txt);
+
+    virtual void OnMouseClick();
+    Shape* Parent = nullptr;
+
+    ShapeInfo Info;    
 };
 
-#endif // SHAPE_H
+#endif

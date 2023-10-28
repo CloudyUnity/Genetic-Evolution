@@ -1,0 +1,103 @@
+﻿  BrainViewer.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\BrainViewer.cpp(34,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\BrainViewer.cpp(34,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\BrainViewer.cpp(83,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Button.cpp
+  Color.cpp
+  Creature.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  CreatureBrain.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(51,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(113,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(139,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(165,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(172,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(182,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(186,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureBrain.cpp(190,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  CreatureGenome.cpp
+  CreatureManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureManager.cpp(68,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureManager.cpp(86,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureManager.cpp(89,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureManager.cpp(93,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureManager.cpp(97,3): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CreatureNeuron.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\CreatureNeuron.cpp(55,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  EvoProj V2.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  HUDManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  InputManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\InputManager.cpp(27,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Logger.cpp
+  NeuronAge.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronAge.cpp(8,45): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  NeuronEye.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(107,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(112,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(117,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(122,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(123,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(125,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronEye.cpp(126,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  NeuronMove.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  NeuronON.cpp
+  NeuronOscillator.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronOscillator.cpp(8,95): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  NeuronRand.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\NeuronRand.cpp(9,26): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  NeuronRotate.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  PaintManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(20,161): warning C4244: 'argument': conversion from 'const double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(20,127): warning C4244: 'argument': conversion from 'const double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(121,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(133,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(143,31): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(143,31): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(143,44): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(143,44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(144,38): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(144,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(144,51): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(144,51): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(157,13): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(158,20): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(159,20): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(160,13): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(198,55): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(198,48): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(198,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(198,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(223,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(224,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(246,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.cpp(283,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Compiling...
+  PerformanceAnalyser.cpp
+  Shape.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  SimulationManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\SimulationManager.cpp(44,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  SimulationSetup.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\SimulationSetup.cpp(10,55): warning C4305: 'initializing': truncation from 'double' to 'float'
+  UpdateManager.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\UpdateManager.cpp(32,22): warning C4305: '=': truncation from '__int64' to 'int'
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\UpdateManager.cpp(32,11): warning C4309: '=': truncation of constant value
+  Vector2.cpp
+C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\Vector2.cpp(59,23): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1371 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  EvoProj V2.vcxproj -> C:\Users\finnw\source\repos\EvoProj V2\x64\Release\EvoProj V2.exe
