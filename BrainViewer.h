@@ -2,6 +2,9 @@
 #include "CreatureBrain.h"
 #include "Shape.h"
 #include <unordered_map>
+#include <stdexcept>
+#include "Logger.h"
+#include "PaintManager.h"
 
 #ifndef BRAIN_VIEWER_H
 #define BRAIN_VIEWER_H

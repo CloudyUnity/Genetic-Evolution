@@ -6,5 +6,5 @@ NeuronMove::NeuronMove(NeuronType type) : CreatureNeuron(type) {}
 
 void NeuronMove::ApplyOutput(Creature* creature, float val) {
 	//Logger::Log("Moving forward! " + std::to_string(val));
-	creature->AddAccelerationForward(val);
+	creature->AddAccelerationForward(val * SimulationSetup::CREATURE_SPEED_MULT);
 }

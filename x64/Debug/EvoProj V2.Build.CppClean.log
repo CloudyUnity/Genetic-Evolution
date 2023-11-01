@@ -1,16 +1,17 @@
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\vc143.pdb
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\vc143.idb
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\vector2.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\updatemanager.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\simulationsetup.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\shape.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\performanceanalyser.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\paintmanager.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronrotate.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronrand.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronoscillator.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronon.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronmove.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuroneye.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronage.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\logger.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\inputmanager.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\evoproj v2.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\creatureneuron.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\creaturemanager.obj
@@ -19,12 +20,17 @@ c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\creaturebrain.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\creature.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\color.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\brainviewer.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuroneye.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\inputmanager.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronoscillator.obj
-c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\neuronrand.obj
-c:\users\finnw\source\repos\evoproj v2\x64\debug\evoproj v2.exe
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\vector2.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\updatemanager.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\simulationsetup.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\hudmanager.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\button.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\simulationmanager.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\spawnpoint.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\wallmanager.obj
+c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\arenamanager.obj
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\evoproj v2.ilk
+c:\users\finnw\source\repos\evoproj v2\x64\debug\evoproj v2.exe
 c:\users\finnw\source\repos\evoproj v2\x64\debug\evoproj v2.pdb
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\evoproj v2.tlog\cl.command.1.tlog
 c:\users\finnw\source\repos\evoproj v2\evoproj v2\x64\debug\evoproj v2.tlog\cl.read.1.tlog

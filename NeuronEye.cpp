@@ -1,5 +1,6 @@
 #include "NeuronEye.h"
 #include "SDL.h"
+#include "WallManager.h"
 
 NeuronEye::NeuronEye(NeuronType type, VisionType visionType, Vector2 origin, double angle) : CreatureNeuron(type) {
 	Vision = visionType;
@@ -8,52 +9,63 @@ NeuronEye::NeuronEye(NeuronType type, VisionType visionType, Vector2 origin, dou
 
     Shape::ShapeInfo info;
     info.IsLine = true;
-    info.QuickDrawDisabled = true;
     RaycastLine = new Shape(info);
 }
 
 float NeuronEye::CalcInputValue(Creature* creature) {
 	
+    float closestHit = std::numeric_limits<float>::infinity();
+
+    double angle = creature->Info.RotationAngle * (M_PI / 180.0);
+    double rotatedX = Origin.X * cos(angle) - Origin.Y * sin(angle);
+    double rotatedY = Origin.X * sin(angle) + Origin.Y * cos(angle);
+
+    Vector2 origin = creature->Info.Position.Add(Vector2(rotatedX, rotatedY));
+
+    Vector2 dir = creature->GetPointDirection();
+    double newAngle = atan2(dir.Y, dir.X) + RotAngle;
+    dir = Vector2(cos(newAngle), sin(newAngle));
+    Vector2 end = origin.Add(dir.Mult(SimulationSetup::MAX_VISION_DISTANCE));
+
 	if (Vision == VisionType::CREATURE) {
-
-		float closestHit = std::numeric_limits<float>::infinity();
-
-        double angle = creature->Info.RotationAngle * (M_PI / 180.0);
-        double rotatedX = Origin.X * cos(angle) - Origin.Y * sin(angle);
-        double rotatedY = Origin.X * sin(angle) + Origin.Y * cos(angle);
-
-        Vector2 origin = creature->Info.Position.Add(Vector2(rotatedX, rotatedY));
         
-        Vector2 dir = creature->GetPointDirection();
-        double newAngle = atan2(dir.Y, dir.X) + RotAngle;
-        dir = Vector2(cos(newAngle), sin(newAngle));
-        Vector2 end = origin.Add(dir.Mult(SimulationSetup::MAX_VISION_DISTANCE));
+        int size = CreatureManager::CreatureList.size();
+		for (int i = 0; i < size; i++) {
 
-		for (int i = 0; i < CreatureManager::CreatureList.size(); i++) {
 			if (CreatureManager::CreatureList.at(i) == creature)
 				continue;
             
             float distance = RayCastShape(origin, end, CreatureManager::CreatureList.at(i));
             if (distance < closestHit)
                 closestHit = distance;
-		}
-
-        bool noHit = closestHit > SimulationSetup::MAX_VISION_DISTANCE || closestHit == 0;
-
-        if (!noHit)
-            end = origin.Add(dir.Mult(closestHit));
-
-        RaycastLine->Info.Col = noHit ? Color(255, 0, 0, 255) : Color(0, 255, 0, 255);
-        RaycastLine->Info.Position = origin;
-        RaycastLine->Info.LineEndPosition = end;
-
-        if (noHit)
-            return 0;
-
-        return closestHit / SimulationSetup::MAX_VISION_DISTANCE;
+		}        
 	}
 
-    return 0;
+    if (Vision == VisionType::WALL) {
+
+        int size = WallManager::WallList.size();
+        for (int i = 0; i < size; i++) {
+
+            float distance = RayCastShape(origin, end, WallManager::WallList.at(i));
+            if (distance < closestHit)
+                closestHit = distance;
+        }
+    }
+
+    bool noHit = closestHit > SimulationSetup::MAX_VISION_DISTANCE || closestHit == 0;
+
+    if (!noHit)
+        end = origin.Add(dir.Mult(closestHit));
+
+    RaycastLine->Info.Col = noHit ? Color(255, 0, 0, 255) : Color(0, 255, 0, 255);
+    RaycastLine->Info.Position = origin;
+    RaycastLine->Info.LineEndPosition = end;
+    RaycastLine->Info.Visible = (creature == CreatureManager::SelectedCreature);
+
+    if (noHit)
+        return 0;
+
+    return (1 / closestHit) / SimulationSetup::MAX_VISION_DISTANCE;
 }
 
 float NeuronEye::RayCastShape(Vector2 origin, Vector2 end, Shape* shape) {

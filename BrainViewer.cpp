@@ -1,7 +1,4 @@
 #include "BrainViewer.h"
-#include <stdexcept>
-#include "Logger.h"
-#include "PaintManager.h"
 
 std::unordered_map<CreatureNeuron*, Shape*> BrainViewer::NeuronShapeHashMap;
 std::vector<Shape*> BrainViewer::CurrentShapes;

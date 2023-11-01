@@ -1,6 +1,7 @@
 #pragma once
 #include "Shape.h"
 #include <functional>
+#include "Creature.h"
 
 #ifndef BUTTON_H
 #define BUTTON_H

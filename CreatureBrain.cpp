@@ -7,6 +7,8 @@
 #include "NeuronEye.h"
 #include "NeuronOscillator.h"
 #include "NeuronRand.h"
+#include "NeuronGetRot.h"
+#include "NeuronBorder.h"
 
 void CreatureBrain::Init(int internalCount, int genomeSize) {
 	InputNeurons = CreateInputNeurons();	
@@ -78,17 +80,37 @@ std::vector<CreatureNeuron*> CreatureBrain::CreateInputNeurons() {
 
 	CreatureNeuron* neuron = new NeuronAge(CreatureNeuron::NeuronType::INPUT);
 	neurons.push_back(neuron);
+
 	neuron = new NeuronON(CreatureNeuron::NeuronType::INPUT);
 	neurons.push_back(neuron);
+
 	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::CREATURE, Vector2(10, 0), 0);
 	neurons.push_back(neuron);
 	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::CREATURE, Vector2(10, 3), 45);
 	neurons.push_back(neuron);
 	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::CREATURE, Vector2(10, -3), -45);
 	neurons.push_back(neuron);
+
+	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::WALL, Vector2(10, 0), 0);
+	neurons.push_back(neuron);
+	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::WALL, Vector2(10, 3), 45);
+	neurons.push_back(neuron);
+	neuron = new NeuronEye(CreatureNeuron::NeuronType::INPUT, NeuronEye::VisionType::WALL, Vector2(10, -3), -45);
+	neurons.push_back(neuron);
+
 	neuron = new NeuronOscillator(CreatureNeuron::NeuronType::INPUT);
 	neurons.push_back(neuron);
+
 	neuron = new NeuronRand(CreatureNeuron::NeuronType::INPUT);
+	neurons.push_back(neuron);
+
+	neuron = new NeuronGetRot(CreatureNeuron::NeuronType::INPUT);
+	neurons.push_back(neuron);
+
+	neuron = new NeuronBorder(CreatureNeuron::NeuronType::INPUT, false);
+	neurons.push_back(neuron);
+
+	neuron = new NeuronBorder(CreatureNeuron::NeuronType::INPUT, true);
 	neurons.push_back(neuron);
 	
 	return neurons;
@@ -112,6 +134,7 @@ void CreatureBrain::EraseUselessNeurons() {
 
 	for (int i = InternalNeurons.size() - 1; i >= 0; i--) {
 		if (InternalNeurons.at(i)->Connections.empty()) {
+			InternalNeurons.at(i)->DeleteSelf();
 			InternalNeurons.erase(InternalNeurons.begin() + i);
 			continue;
 		}
@@ -132,12 +155,15 @@ void CreatureBrain::EraseUselessNeurons() {
 			}
 		}
 
-		if (!hasUsefulConnection)
+		if (!hasUsefulConnection) {
+			InternalNeurons.at(i)->DeleteSelf();
 			InternalNeurons.erase(InternalNeurons.begin() + i);
+		}			
 	}
 
 	for (int i = InputNeurons.size() - 1; i >= 0; i--) {
 		if (InputNeurons.at(i)->Connections.empty()) {
+			InputNeurons.at(i)->DeleteSelf();
 			InputNeurons.erase(InputNeurons.begin() + i);
 			continue;
 		}
@@ -158,13 +184,16 @@ void CreatureBrain::EraseUselessNeurons() {
 			}
 		}
 
-		if (!hasUsefulConnection)
+		if (!hasUsefulConnection) {
+			InputNeurons.at(i)->DeleteSelf();
 			InputNeurons.erase(InputNeurons.begin() + i);
+		}			
 	}
 
 	for (int i = InternalNeurons.size() - 1; i >= 0; i--) {
 
 		if (std::find(connectedInternals.begin(), connectedInternals.end(), InternalNeurons.at(i)) == connectedInternals.end()) {
+			InternalNeurons.at(i)->DeleteSelf();
 			InternalNeurons.erase(InternalNeurons.begin() + i);
 		}
 	}
@@ -172,6 +201,7 @@ void CreatureBrain::EraseUselessNeurons() {
 	for (int i = OutputNeurons.size() - 1; i >= 0; i--) {
 		
 		if (std::find(connectedOutputs.begin(), connectedOutputs.end(), OutputNeurons.at(i)) == connectedOutputs.end()) {
+			OutputNeurons.at(i)->DeleteSelf();
 			OutputNeurons.erase(OutputNeurons.begin() + i);
 		}
 	}

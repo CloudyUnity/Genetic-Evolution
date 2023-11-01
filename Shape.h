@@ -2,6 +2,8 @@
 #include "Vector2.h"
 #include "Color.h"
 
+class Creature;
+
 #ifndef SHAPE_H
 #define SHAPE_H
 
@@ -35,7 +37,6 @@ public:
         // Properties        
         bool Filled = true;
         bool Visible = true;
-        bool Wall = false;
 
         // Interactivity
         bool Hoverable = false;
@@ -55,7 +56,7 @@ public:
     bool Contains(Vector2 point);
     void SetText(std::string txt);
 
-    virtual void OnMouseClick();
+    virtual void OnMouseClick();    
     Shape* Parent = nullptr;
 
     ShapeInfo Info;    

@@ -1,12 +1,12 @@
 #include "WallManager.h"
 
-std::vector<Shape*> WallManager::WallList;
+std::vector<Collider*> WallManager::WallList;
 
-void WallManager::AddShape(Shape* shape) {
+void WallManager::AddShape(Collider* shape) {
 	WallList.push_back(shape);
 }
 
-void WallManager::RemoveShape(Shape* shape) {
+void WallManager::RemoveShape(Collider* shape) {
     auto it = std::remove(WallList.begin(), WallList.end(), shape);
     if (it != WallList.end()) {
         WallList.erase(it);

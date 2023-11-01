@@ -114,6 +114,21 @@
     <ClCompile Include="WallManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="ArenaManager.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="RewardToken.cpp">
+      <Filter>Source Files\Fundementals</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Source Files\Fundementals</Filter>
+    </ClCompile>
+    <ClCompile Include="NeuronGetRot.cpp">
+      <Filter>Source Files\Creatures\Neurons</Filter>
+    </ClCompile>
+    <ClCompile Include="NeuronBorder.cpp">
+      <Filter>Source Files\Creatures\Neurons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -195,6 +210,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WallManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArenaManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RewardToken.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuronGetRot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NeuronBorder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -30,38 +30,6 @@ void PaintManager::Init() {
 	info.Visible = false;
 	Scroller = new Shape(info);
 
-	Vector2 min = SimulationSetup::MIN_BOUNDS;
-	Vector2 max = SimulationSetup::MAX_BOUNDS;
-
-	info = Shape::ShapeInfo();
-	info.Col = SimulationSetup::ARENA_COLOR;
-	info.Scale = max.Sub(min);
-	info.Position = min.Add(info.Scale.Mult(0.5));	
-	info.Layer = -5000;
-	new Shape(info);
-
-	double pad = 100;
-	double halfPad = pad * 0.5;
-	Vector2 center = info.Position;
-	Vector2 scale = info.Scale;
-
-	info = Shape::ShapeInfo();
-	info.Col = SimulationSetup::BG_COLOR;
-	info.Position = Vector2(center.X, min.Y - halfPad);
-	info.Scale = Vector2(scale.X + pad * 2, pad);
-	info.Layer = 3000;
-	new Shape(info);
-
-	info.Position = Vector2(center.X, max.Y + halfPad);
-	new Shape(info);
-
-	info.Position = Vector2(max.X + halfPad, center.Y);
-	info.Scale = Vector2(pad, scale.Y + pad * 2);
-	new Shape(info);
-	
-	info.Position = Vector2(min.X - halfPad, center.Y);
-	new Shape(info);
-
 	ZoomLevel = 1;
 }
 

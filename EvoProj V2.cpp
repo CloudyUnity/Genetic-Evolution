@@ -13,6 +13,7 @@
 #include "HUDManager.h"
 #include "SimulationManager.h"
 #include "SpawnPoint.h"
+#include "ArenaManager.h"
 
 int main(int argc, char* argv[])
 {   
@@ -31,16 +32,9 @@ int main(int argc, char* argv[])
     HUDManager::Init();
     Logger::Log("HUD Init Done");
 
-    Shape::ShapeInfo info;
-    info.Wall = true;
-    info.Position = Vector2(1200, 1200);
-    info.Scale = Vector2(1000, 1000);
-    info.Col = Color::COZY_BLACK;
-    info.Layer = 1300;
-    new Shape(info);
-
     SpawnPoint::Set(Vector2(300, 300));
-    SimulationManager::InitSim(1, 5, 200, 2, 3);
+    ArenaManager::Init(Vector2(3000, 1500), false, 20, Color::COZY_WHITE, true);
+    SimulationManager::InitSim(1, 13, 150,10, 35, 0.5, 6);
 
     Logger::Log("Initialisation complete, starting update loop");    
 

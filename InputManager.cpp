@@ -77,5 +77,5 @@ void InputManager::MouseWheelClick() {
 void InputManager::MouseWheelHold() {
 	Vector2 dir = ArenaMousePos.Sub(LastArenaMousePos);
 	if (dir.Magnitude() > 0.1)
-		PaintManager::MoveScroller(dir.Mult(1 / PaintManager::ZoomLevel));
+		PaintManager::MoveScroller(dir);
 }

@@ -13,7 +13,7 @@ class NeuronEye : public CreatureNeuron {
 public:
 	enum VisionType {
 		CREATURE,
-		BORDER
+		WALL
 	};
 	VisionType Vision;
 	Shape* RaycastLine;

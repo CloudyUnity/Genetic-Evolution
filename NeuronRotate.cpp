@@ -5,5 +5,5 @@
 NeuronRotate::NeuronRotate(NeuronType type) : CreatureNeuron(type) {}
 
 void NeuronRotate::ApplyOutput(Creature* creature, float val) {
-	creature->Rotate(val);
+	creature->Rotate(val * SimulationSetup::CREATURE_ROTATION_MULT);
 }

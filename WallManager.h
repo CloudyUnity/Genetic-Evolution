@@ -1,5 +1,5 @@
 #pragma once
-#include "Shape.h"
+#include "Collider.h"
 #include <vector>
 
 #ifndef WALL_MANAGER_H
@@ -7,10 +7,10 @@
 
 class WallManager {
 public:    
-    static void AddShape(Shape* shape);
-    static void RemoveShape(Shape* shape);
+    static void AddShape(Collider* shape);
+    static void RemoveShape(Collider* shape);
     
-    static std::vector<Shape*> WallList;    
+    static std::vector<Collider*> WallList;
 };
 
 #endif 

@@ -5,6 +5,7 @@
 #include "SimulationManager.h"
 #include "SpawnPoint.h"
 #include "WallManager.h"
+#include "ArenaManager.h"
 
 std::vector<Creature*> CreatureManager::CreatureList;
 Creature* CreatureManager::SelectedCreature;
@@ -14,9 +15,8 @@ void CreatureManager::SpawnCreatures(int amount) {
 	for (int i = 0; i < amount; i++) {
 
 		Shape::ShapeInfo info;
-		Vector2 max = SimulationSetup::MAX_BOUNDS;
-		Vector2 min = SimulationSetup::MIN_BOUNDS;
-		info.Position = SpawnPoint::Active ? SpawnPoint::Pos : Vector2(rand() % (int)max.X + min.X, rand() % (int)max.Y + min.Y);		
+		Vector2 max = ArenaManager::ArenaSize;
+		info.Position = SpawnPoint::Active ? SpawnPoint::Pos : Vector2(rand() % (int)max.X, rand() % (int)max.Y);		
 		info.Scale = Vector2(20, 10);
 		info.Col = SimulationSetup::CREATURE_COLOR;
 		info.BorderColor = SimulationSetup::CREATURE_BORDER_COLOR;
@@ -34,9 +34,8 @@ void CreatureManager::SpawnCreatures(std::vector<std::vector<int>> allGenes) {
 	for (int i = 0; i < allGenes.size(); i++) {
 
 		Shape::ShapeInfo info;
-		Vector2 max = SimulationSetup::MAX_BOUNDS;
-		Vector2 min = SimulationSetup::MIN_BOUNDS;
-		info.Position = SpawnPoint::Active ? SpawnPoint::Pos : Vector2(rand() % (int)max.X + min.X, rand() % (int)max.Y + min.Y);
+		Vector2 max = ArenaManager::ArenaSize;
+		info.Position = SpawnPoint::Active ? SpawnPoint::Pos : Vector2(rand() % (int)max.X, rand() % (int)max.Y);
 		info.Scale = Vector2(20, 10);
 		info.Col = SimulationSetup::CREATURE_COLOR;
 		info.BorderColor = SimulationSetup::CREATURE_BORDER_COLOR;
