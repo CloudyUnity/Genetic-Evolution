@@ -141,8 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArenaManager.cpp" />
     <ClCompile Include="BrainViewer.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="CreatureBrain.cpp" />
@@ -154,7 +156,9 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="NeuronAge.cpp" />
+    <ClCompile Include="NeuronBorder.cpp" />
     <ClCompile Include="NeuronEye.cpp" />
+    <ClCompile Include="NeuronGetRot.cpp" />
     <ClCompile Include="NeuronMove.cpp" />
     <ClCompile Include="NeuronON.cpp" />
     <ClCompile Include="NeuronOscillator.cpp" />
@@ -162,6 +166,7 @@
     <ClCompile Include="NeuronRotate.cpp" />
     <ClCompile Include="PaintManager.cpp" />
     <ClCompile Include="PerformanceAnalyser.cpp" />
+    <ClCompile Include="RewardToken.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="SimulationManager.cpp" />
     <ClCompile Include="SimulationSetup.cpp" />
@@ -171,8 +176,10 @@
     <ClCompile Include="WallManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArenaManager.h" />
     <ClInclude Include="BrainViewer.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Creature.h" />
     <ClInclude Include="CreatureBrain.h" />
@@ -183,7 +190,9 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="NeuronAge.h" />
+    <ClInclude Include="NeuronBorder.h" />
     <ClInclude Include="NeuronEye.h" />
+    <ClInclude Include="NeuronGetRot.h" />
     <ClInclude Include="NeuronMove.h" />
     <ClInclude Include="NeuronON.h" />
     <ClInclude Include="NeuronOscillator.h" />
@@ -191,6 +200,7 @@
     <ClInclude Include="NeuronRotate.h" />
     <ClInclude Include="PaintManager.h" />
     <ClInclude Include="PerformanceAnalyser.h" />
+    <ClInclude Include="RewardToken.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="SimulationManager.h" />
     <ClInclude Include="SimulationSetup.h" />

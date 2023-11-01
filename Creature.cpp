@@ -1,4 +1,6 @@
 #include "Creature.h"
+#include "ArenaManager.h"
+
 
 Creature::Creature(ShapeInfo info, int inC, int gS) : Shape(info) {
 	Brain.Init(inC, gS);
@@ -57,27 +59,27 @@ void Creature::Move() {
 	if (Velocity.Magnitude() < 0.01)
 		Velocity = Vector2(0, 0);
 
-	Vector2 max = SimulationSetup::MAX_BOUNDS;
-	max = max.Add(SimulationSetup::SCREEN_WRAP_PADDING);
-	Vector2 min = SimulationSetup::MIN_BOUNDS;
-	min = min.Add(-SimulationSetup::SCREEN_WRAP_PADDING);
+	if (ArenaManager::WrapAround) {
+		Vector2 max = ArenaManager::MaxBounds;
+		Vector2 min = ArenaManager::MinBounds;
 
-	if (newPos.X > max.X) {
-		double displacement = newPos.X - max.X;
-		newPos.X = min.X + displacement;
-	}
-	if (newPos.Y > max.Y) {
-		double displacement = newPos.Y - max.Y;
-		newPos.Y = min.Y + displacement;
-	}
-	if (newPos.X < min.X) {
-		double displacement = newPos.X - min.X;
-		newPos.X = max.X + displacement;
-	}
-	if (newPos.Y < min.Y) {
-		double displacement = newPos.Y - min.Y;
-		newPos.Y = max.Y + displacement;
-	}
+		if (newPos.X > max.X) {
+			double displacement = newPos.X - max.X;
+			newPos.X = min.X + displacement;
+		}
+		if (newPos.Y > max.Y) {
+			double displacement = newPos.Y - max.Y;
+			newPos.Y = min.Y + displacement;
+		}
+		if (newPos.X < min.X) {
+			double displacement = newPos.X - min.X;
+			newPos.X = max.X + displacement;
+		}
+		if (newPos.Y < min.Y) {
+			double displacement = newPos.Y - min.Y;
+			newPos.Y = max.Y + displacement;
+		}
+	}	
 
 	Info.Position = newPos;
 }
@@ -116,10 +118,11 @@ bool Creature::CheckCollision(Creature* otherCreature) {
 		otherCreature->Info.Position.Y += moveY;
 	}
 
+	CollisionCounter++;
 	return true;
 }
 
-bool Creature::CheckCollision(Shape* wall) {
+bool Creature::CheckCollision(Collider* wall) {
 
 	double distance = sqrt(pow(Info.Position.X - wall->Info.Position.X, 2) + pow(Info.Position.Y - wall->Info.Position.Y, 2));
 	double wallRadius = sqrt(pow(wall->Info.HalfScale.X, 2) + pow(wall->Info.Scale.Y, 2));
@@ -135,6 +138,11 @@ bool Creature::CheckCollision(Shape* wall) {
 	if (minSeparationX <= 0 || minSeparationY <= 0)
 		return false;
 
+	if (wall->Trigger) {
+		wall->OnCreatureTrigger(this);
+		return false;
+	}		
+
 	if (minSeparationX < minSeparationY) {
 		double moveX = minSeparationX * (dx < 0 ? -1 : 1);
 		Info.Position.X -= moveX;
@@ -144,6 +152,7 @@ bool Creature::CheckCollision(Shape* wall) {
 		Info.Position.Y -= moveY;
 	}
 
+	CollisionCounter++;
 	return true;
 }
 

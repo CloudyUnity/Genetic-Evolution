@@ -3,6 +3,7 @@
 #include "math.h"
 #include <random>
 #include <SDL.h>
+#include "Logger.h"
 
 CreatureGenome::CreatureGenome() {}
 CreatureGenome::CreatureGenome(std::vector<int> genes) {

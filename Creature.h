@@ -10,6 +10,8 @@
 #ifndef CREATURE_H
 #define CREATURE_H
 
+class Collider;
+
 class Creature : public Shape {
 public:
 	Creature(ShapeInfo info, int inC, int gS);
@@ -22,6 +24,8 @@ public:
 	Shape* eye2;
 
 	Vector2 Velocity;
+	int CollisionCounter;
+	int RewardTokenCounter;
 
 	void AddAccelerationForward(double amount);
 	void Move();
@@ -29,7 +33,7 @@ public:
 	void Die();
 	void Update();
 	bool CheckCollision(Creature* other);
-	bool CheckCollision(Shape* wall);
+	bool CheckCollision(Collider* wall);
 
 	void OnMouseClick() override;
 };

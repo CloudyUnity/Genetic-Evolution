@@ -2,17 +2,13 @@
 #include "Logger.h" 
 #include "PaintManager.h"
 #include "SimulationSetup.h"
-#include "WallManager.h"
 
 Shape::Shape(ShapeInfo info)
 {
     Info = info;
     Info.HalfScale = info.Scale.Mult(0.5);
     if (!info.ZoomDisabled)
-        Parent = PaintManager::Scroller;
-
-    if (info.Wall)
-        WallManager::AddShape(this);
+        Parent = PaintManager::Scroller;    
 
     PaintManager::AddShape(this);
 }
