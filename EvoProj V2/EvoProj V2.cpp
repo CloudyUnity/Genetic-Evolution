@@ -34,7 +34,16 @@ int main(int argc, char* argv[])
 
     SpawnPoint::Set(Vector2(300, 300));
     ArenaManager::Init(Vector2(3000, 1500), false, 20, Color::COZY_WHITE, true);
-    SimulationManager::InitSim(1, 13, 150,10, 35, 0.5, 6);
+
+    int updatesPerFrame = 1;
+    int simulationDurationSeconds = 12;
+    int creatures = 150;
+    int internalNeuronCount = 10;
+    int genomeSize = 35; // Connections count
+    double knockoutPercentage = 0.5f; // Creatures lost per generation
+    int mutationsPerGeneration = 3;
+
+    SimulationManager::InitSim(updatesPerFrame, simulationDurationSeconds, creatures, internalNeuronCount, genomeSize, knockoutPercentage, mutationsPerGeneration);
 
     Logger::Log("Initialisation complete, starting update loop");    
 
