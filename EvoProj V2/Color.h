@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <string>
-#include <SDL.h>
+#include "SDL.h"
 
 #ifndef COLOR_H
 #define COLOR_H
