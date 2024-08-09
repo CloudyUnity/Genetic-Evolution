@@ -20,8 +20,10 @@ void PaintManager::Init() {
 	Window = SDL_CreateWindow("Evolution Project", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SimulationSetup::WINDOW_BOUNDS.X, SimulationSetup::WINDOW_BOUNDS.Y, SDL_WINDOW_SHOWN);
 	Rend = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED);
 	Texture = LoadTexture("Blank");
-	TTF_Init();
-	MainFont = TTF_OpenFont("Data\\Rubik Fonts\\Rubik-Black.ttf", SimulationSetup::TEXT_QUALITY);
+	if (TTF_Init() != 0)
+		throw std::exception("TTF init error");
+
+	MainFont = TTF_OpenFont("..\\Data\\Rubik Fonts\\Rubik-Black.ttf", SimulationSetup::TEXT_QUALITY);
 
 	if (!MainFont)
 		throw std::exception("Error: Font not initialized correctly!");
@@ -239,7 +241,7 @@ void PaintManager::CleanUp() {
 
 SDL_Texture* PaintManager::LoadTexture(const char* imageName) {
 
-	const char* basePath = "Data\\";
+	const char* basePath = "..\\Data\\";
 	const char* fileExtension = ".bmp";
 	char fullPath[1024];
 	snprintf(fullPath, sizeof(fullPath), "%s%s%s", basePath, imageName, fileExtension);
