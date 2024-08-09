@@ -28,3 +28,5 @@ Controls:
   - Use the pause and speed up buttons on the GUI to change the timespeed    
   - The restart button restarts the simulation and gives creatures new random brains  
   
+![image](https://github.com/user-attachments/assets/10c73e99-63ba-43d6-8430-4cf651f38e10)
+![image](https://github.com/user-attachments/assets/f6a4e566-a049-4ddb-9010-ab3622e80f9b)
