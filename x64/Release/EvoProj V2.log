@@ -1,9 +1,0 @@
-﻿  InputManager.cpp
-C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\PaintManager.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\finnw\source\repos\EvoProj V2\EvoProj V2\InputManager.cpp(27,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating code
-  3 of 1558 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    9 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  EvoProj V2.vcxproj -> C:\Users\finnw\source\repos\EvoProj V2\x64\Release\EvoProj V2.exe
