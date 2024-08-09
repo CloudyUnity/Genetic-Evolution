@@ -1,0 +1,11 @@
+// =============================== SIMULATION EVALUATION AND SORTING =============================================
+// Removes all creatures which don't pass this function
+bool SimulationManager::EvaluateCreature(Creature* creature) {
+	return creature->Velocity.Magnitude() > 0.2f;
+}
+
+// Sorts the list from highest to lowest rewards based on this function
+bool SimulationManager::AGreaterThanB(Creature* creatureA, Creature* creatureB) {
+	return creatureA->CollisionCounter < creatureA->CollisionCounter;
+}
+// =============================== SIMULATION EVALUATION AND SORTING =============================================
