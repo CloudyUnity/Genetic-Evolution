@@ -55,7 +55,7 @@ void Logger::AltLog(T logMessage) {
 template <typename T>
 void Logger::HardLog(T logMessage, std::string fileName) {
 
-    std::string filePath = "Data\\" + fileName + ".txt";
+    std::string filePath = "..\\Data\\" + fileName + ".txt";
     std::ofstream outputStream(filePath);
 
     if (!outputStream.is_open()) {

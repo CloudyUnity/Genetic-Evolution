@@ -9,10 +9,10 @@ std::ofstream Logger::AltOutputStream;
 
 void Logger::Init() {
 
-    FilePath = "Data\\debugLog.txt";
+    FilePath = "..\\Data\\debugLog.txt";
     OutputStream = std::ofstream(FilePath, std::ios::app);    
 
-    AltFilePath = "Data\\debugLogAlt.txt";
+    AltFilePath = "..\\Data\\debugLogAlt.txt";
     AltOutputStream = std::ofstream(AltFilePath, std::ios::app);
 
     Logger::ClearFile();
